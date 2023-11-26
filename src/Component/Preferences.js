@@ -1,8 +1,8 @@
 import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
-// import Slider from '@material-ui/core/Slider';
-// import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import Slider from '@mui/material/Slider';
+import TextField from '@mui/material/TextField';
 
 const useStyles = makeStyles({
   root: {
