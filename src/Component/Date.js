@@ -1,11 +1,9 @@
 import 'date-fns';
 import React from 'react';
-import Grid from '@mui/material/Grid';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
+import { Grid, TextField } from '@mui/material';
+import DateAdapter from '@mui/lab/AdapterDateFns'; // Import the DateAdapter
+import LocalizationProvider from '@mui/lab/LocalizationProvider'; // Import the LocalizationProvider
+import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 
 export default function DatePicker(props) {
   
@@ -18,9 +16,9 @@ export default function DatePicker(props) {
   };
 
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Grid container justify="space-evenly">
-        <KeyboardDatePicker
+    <LocalizationProvider dateAdapter={DateAdapter}> {/* Set the DateAdapter */}
+      <Grid container justifyContent="space-evenly">
+        <DesktopDatePicker
           disableToolbar
           variant="inline"
           format="MM/dd/yyyy"
@@ -29,11 +27,9 @@ export default function DatePicker(props) {
           label="Departure Date"
           value={props.departureDate}
           onChange={handleDepartureDateChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
+          renderInput={(params) => <TextField {...params} />}
         />
-        <KeyboardDatePicker
+        <DesktopDatePicker
           disableToolbar
           variant="inline"
           margin="normal"
@@ -42,11 +38,9 @@ export default function DatePicker(props) {
           format="MM/dd/yyyy"
           value={props.returnDate}
           onChange={handleReturnDateChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
+          renderInput={(params) => <TextField {...params} />}
         />
       </Grid>
-    </MuiPickersUtilsProvider>
+    </LocalizationProvider>
   );
 }

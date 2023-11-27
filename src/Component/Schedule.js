@@ -1,6 +1,8 @@
 import React from "react";
-// import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-// import { HotelRounded, RoomRounded, RestaurantRounded } from '@material-ui/icons';
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import HotelIcon from '@mui/icons-material/Hotel';
+import SingleBedIcon from '@mui/icons-material/SingleBed';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
 
 const grid = 8;
 
@@ -11,9 +13,9 @@ const colorMap = {
 }
 
 const iconMap = {
-    'H': <HotelRounded fontSize="small"/>,
-    'A': <RoomRounded fontSize="small"/>,
-    'R': <RestaurantRounded fontSize="small"/>
+    'H': <HotelIcon/>,
+    'A': <SingleBedIcon />,
+    'R': <RestaurantIcon/>
 }
 
 const getItemStyle = (isDragging, draggableStyle, attractionType) => ({

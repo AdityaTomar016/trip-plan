@@ -8,8 +8,9 @@ import { Map } from './Component/Map';
 import { Schedule, onDragEnd } from './Component/Schedule';
 import callAPIs from './utils';
 import Button from '@mui/material/Button';
-import withScriptjs from 'react-google-maps/lib/withScriptjs';
-import SearchRoundedIcon from '@mui/material/SearchRoundedIcon';
+import { LoadScript, GoogleMap } from '@react-google-maps/api';
+// import { withScriptjs } from '@react-google-maps/api';
+// import SearchIcon from '@mui/icons-material/Search';
 import Logo from './Image/Logo.png';
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
       handlePlacesChange(schedule, setSchedule, event);
   }
 
-  const MapLoader = withScriptjs(Map);
+  // const MapLoader = withScriptjs(Map);
 
   return (
     <div className="App">
@@ -66,7 +67,7 @@ function App() {
           returnDate={returnDate}
           returnDateOnChange={setReturnDate}
         ></DatePicker>
-        <Button id="search" variant="contained" onClick={onSearchClicked} startIcon={<SearchRoundedIcon/>}>Search</Button>
+        <Button id="search" variant="contained" onClick={onSearchClicked} >Search</Button>
       </div>
       <div className="indented column">
         <Button onClick={() => toggleShow(!show)}>
@@ -92,12 +93,22 @@ function App() {
             onDragEnd={handleDrag}
           />
           <div id="map">          
-            <MapLoader
+          
+            {/* <MapLoader
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmqcaIoJGQP6UDlxQ5Nf6aRcKHaRvTewQ"
               loadingElement={<div style={{ height: "100%"}} />}
               schedule={schedule}
               allPlaces={allPlaces}
-            />
+            /> */}
+
+            <LoadScript
+              googleMapsApiKey="YOUR_API_KEY" // Replace with your Google Maps API key
+            >
+              <GoogleMap
+                center={{ lat: -34.397, lng: 150.644 }}
+                zoom={8}
+              />
+            </LoadScript>
           </div>
       </div>
       <div className="App-footer"></div>
