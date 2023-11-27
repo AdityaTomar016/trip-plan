@@ -1,10 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@mui/material/styles';
+import { styled } from '@mui/system';
 import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import TextField from '@mui/material/TextField';
 
-const useStyles = makeStyles({
+const useStyles = styled({
   root: {
     width: 300,
   },

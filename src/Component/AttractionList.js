@@ -1,12 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@mui/material/styles';
+import { styled } from '@mui/system';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
  //This Page need to modify Form Control label
-const useStyles = makeStyles((theme) => ({
+const useStyles = styled((theme) => ({
   root: {
     display: 'flex',
   },

@@ -1,15 +1,15 @@
 /*global google*/
 import React, { useEffect, useState } from "react";
 import {
-  withGoogleMap,
   GoogleMap,
   DirectionsRenderer
-} from "react-google-maps";
+} from "@react-google-maps/api";
 
 export function Map(props) {
   const [state, setState] = useState({
     directions: null
   });
+  const [directions, setDirections] = useState(null);
   
   useEffect(()=>{
     const directionsService = new google.maps.DirectionsService();
@@ -52,26 +52,35 @@ export function Map(props) {
     );
   })
 
-    const GoogleMapExample = withGoogleMap((props) => (
-      <GoogleMap
-        defaultCenter={{ lat: 25.033964, lng: 121.564468 }}
-        defaultZoom={12}
-      >
-        <DirectionsRenderer
-          directions={state.directions}
-          {...props}
-        />
-      </GoogleMap>
-    ));
+    // const GoogleMapExample = withGoogleMap((props) => (
+    //   <GoogleMap
+    //     defaultCenter={{ lat: 25.033964, lng: 121.564468 }}
+    //     defaultZoom={12}
+    //   >
+    //     <DirectionsRenderer
+    //       directions={state.directions}
+    //       {...props}
+    //     />
+    //   </GoogleMap>
+    // ));
 
     return (
+      // <div>
+      //   <GoogleMapExample
+      //     containerElement={<div style={{ height: `500px`, width: "500px" }} />}
+      //     mapElement={<div style={{ height: `100%` }} />}
+      //     {...props}
+      //   />
+      // </div>
       <div>
-        <GoogleMapExample
-          containerElement={<div style={{ height: `500px`, width: "500px" }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-          {...props}
-        />
-      </div>
+      <GoogleMap
+        center={{ lat: 25.033964, lng: 121.564468 }}
+        zoom={12}
+        mapContainerStyle={{ height: "500px", width: "500px" }}
+      >
+        {directions && <DirectionsRenderer directions={directions} />}
+      </GoogleMap>
+    </div>
     );
 
 }

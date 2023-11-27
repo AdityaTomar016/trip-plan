@@ -1,11 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@mui/material/styles';
+import { styled } from '@mui/system';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
  import Select from '@mui/material/Select';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = styled((theme) => ({
   formControl: {
     margin: theme.spacing(2),
     minWidth: 120,
