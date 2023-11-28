@@ -32,9 +32,9 @@ export default function City(props) {
           value={props.city}
           onChange={handleChange}
         >
-          {/* <MenuItem value={'hongkong'}>Hong Kong</MenuItem> */}
+          <MenuItem value={'hongkong'}>Hong Kong</MenuItem>
           <MenuItem value={'taipei'}>Taipei</MenuItem>
-          {/* <MenuItem value={'shenzhen'}>Shenzhen</MenuItem> */}
+          <MenuItem value={'shenzhen'}>Shenzhen</MenuItem>
         </Select>
       </FormControl>
     </div>

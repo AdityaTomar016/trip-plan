@@ -102,7 +102,7 @@ function App() {
             /> */}
 
             <LoadScript
-              googleMapsApiKey="YOUR_API_KEY" // Replace with your Google Maps API key
+              googleMapsApiKey="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmqcaIoJGQP6UDlxQ5Nf6aRcKHaRvTewQ" // Replace with your Google Maps API key
             >
               <GoogleMap
                 center={{ lat: -34.397, lng: 150.644 }}
