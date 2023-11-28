@@ -1,9 +1,9 @@
 import 'date-fns';
 import React from 'react';
 import { Grid, TextField } from '@mui/material';
-import DateAdapter from '@mui/lab/AdapterDateFns'; // Import the DateAdapter
-import LocalizationProvider from '@mui/lab/LocalizationProvider'; // Import the LocalizationProvider
-import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
+import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns'; // Import the DateAdapter
+import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider'; // Import the LocalizationProvider
+import {DesktopDatePicker} from '@mui/x-date-pickers/DesktopDatePicker';
 
 export default function DatePicker(props) {
   
@@ -16,7 +16,7 @@ export default function DatePicker(props) {
   };
 
   return (
-    <LocalizationProvider dateAdapter={DateAdapter}> {/* Set the DateAdapter */}
+    <LocalizationProvider dateAdapter={AdapterDateFns}> {/* Set the DateAdapter */}
       <Grid container justifyContent="space-evenly">
         <DesktopDatePicker
           disableToolbar
